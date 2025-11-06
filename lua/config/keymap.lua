@@ -8,7 +8,6 @@ vim.keymap.set("n", "<C-b>", ":Neotree toggle left show <CR>", { desc = "Toggle 
 vim.keymap.set("n", "<C-t>", ":ToggleTerm size=10 direction=float <CR>", { desc = "Toggle terminal" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set("t", "<C-t>", [[<C-\><C-n>:ToggleTerm <CR>]], { desc = "Hide terminal and exit to normal mode" })
-vim.keymap.set("n", "<C-r>", "<C-w>w", { desc = "Rotate between windows" })
-vim.keymap.set("n", "<C-q>", ":q <CR>", { desc = "Close window" })
+vim.keymap.set("n", "<C-w>", "<C-w>w", { desc = "Rotate between windows" })
 vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', { desc = "Paste from system clipboard" })
