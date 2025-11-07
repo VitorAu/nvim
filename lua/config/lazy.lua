@@ -17,10 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	require("plugins.gruvbox"),
 	require("plugins.telescope"),
-	require("plugins.conform"),
+	require("plugins.none"),
 	require("plugins.treesitter"),
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
+	require("plugins.lsp"),
+  require("plugins.completion")
 }
 local opts = {}
 require("lazy").setup(plugins, opts)

@@ -1,11 +1,9 @@
-vim.keymap.set("n", "<C-p>", function()
-	require("telescope.builtin").find_files()
-end, { desc = "Find files in project" })
-vim.keymap.set("n", "<C-f>", function()
-	require("telescope.builtin").live_grep()
-end, { desc = "Find text in project" })
-vim.keymap.set("n", "<C-b>", ":Neotree toggle left show <CR>", { desc = "Toggle file explorer" })
-vim.keymap.set("n", "<C-t>", ":ToggleTerm size=10 direction=float <CR>", { desc = "Toggle terminal" })
-vim.keymap.set("t", "<C-t>", [[<C-\><C-n>:ToggleTerm <CR>]], { desc = "Hide terminal and exit to normal mode" })
-vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set("v", "<C-c>", '"+y', {
+    desc = "Copy to system clipboard",
+})
+vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', {
+    desc = "Paste from system clipboard",
+})
+vim.keymap.set("v", "<C-x>", '"+d', {
+    desc = "Cut to system clipboard",
+})
