@@ -45,10 +45,9 @@ return {
 					noremap = true,
 					silent = true,
 				}
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "<C-n>", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<C-d>", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "<C-a>", vim.lsp.buf.code_action, opts)
-
+				vim.keymap.set("n", "<C-a>", vim.lsp.buf.code_action, opts)
 			end)
 			vim.diagnostic.config({
 				virtual_text = false,

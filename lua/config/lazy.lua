@@ -22,7 +22,8 @@ local plugins = {
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
 	require("plugins.lsp"),
-  require("plugins.completion")
+  require("plugins.completion"),
+  require("plugins.comment")
 }
 local opts = {}
 require("lazy").setup(plugins, opts)
