@@ -26,6 +26,9 @@ return {
 		vim.keymap.set("n", "<C-b>", ":Neotree toggle left show <CR>", {
       desc = "Toggle file explorer",
     })
+    vim.keymap.set("i", "<C-b>", ":Neotree toggle left show <CR>", {
+      desc = "Toggle file explorer",
+    })
 	end,
 	lazy = false,
 }

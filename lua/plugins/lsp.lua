@@ -29,6 +29,7 @@ return {
 		dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 		config = function()
 			local lsp = require("lsp-zero").preset({})
+
 			lsp.ensure_installed({
 				"lua_ls",
 				"ts_ls",
@@ -39,6 +40,16 @@ return {
 				"yamlls",
 				"dockerls",
 			})
+
+			vim.lsp.config("pyright", {
+				settings = {
+					python = {
+						venvPath = ".",
+						venv = ".venv",
+					},
+				},
+			})
+
 			lsp.on_attach(function(client, bufnr)
 				local opts = {
 					buffer = bufnr,
@@ -48,7 +59,11 @@ return {
 				vim.keymap.set("n", "<C-n>", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<C-d>", vim.lsp.buf.definition, opts)
 				vim.keymap.set("n", "<C-a>", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("i", "<C-n>", vim.lsp.buf.hover, opts)
+				vim.keymap.set("i", "<C-d>", vim.lsp.buf.definition, opts)
+				vim.keymap.set("i", "<C-a>", vim.lsp.buf.code_action, opts)
 			end)
+
 			vim.diagnostic.config({
 				virtual_text = false,
 				virtual_lines = true,
@@ -61,6 +76,7 @@ return {
 					source = "always",
 				},
 			})
+
 			lsp.setup()
 		end,
 	},
