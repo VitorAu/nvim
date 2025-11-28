@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	require("lua.plugins.snack"),
 	require("plugins.lsp"),
 	require("plugins.none"),
 	require("plugins.gruvbox"),
