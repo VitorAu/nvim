@@ -10,4 +10,3 @@ vim.opt.fillchars = "eob: "
 
 require("config.keymap")
 require("config.lazy")
-require("config.options")
