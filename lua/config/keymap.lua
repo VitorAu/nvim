@@ -1,4 +1,3 @@
-local telescope = require("telescope.builtin")
 local opts = { noremap = true, silent = true }
 
 -----------------------------------------------------------------------
@@ -62,8 +61,12 @@ end, opts)
 -----------------------------------------------------------------------
 -- Telescope
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<C-p>", telescope.find_files, { desc = "Find files in project" })
-vim.keymap.set("n", "<C-f>", telescope.live_grep, { desc = "Find text in project" })
+vim.keymap.set("n", "<C-p>", function()
+	require("telescope.builtin").find_files()
+end, { desc = "Find files in project" })
+vim.keymap.set("n", "<C-f>", function()
+	require("telescope.builtin").live_grep()
+end, { desc = "Find text in project" })
 
 -----------------------------------------------------------------------
 -- ToggleTerm
