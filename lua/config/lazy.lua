@@ -18,7 +18,6 @@ local plugins = {
 	require("plugins.snack"),
 	require("plugins.lsp"),
 	require("plugins.none"),
-	require("plugins.noice"),
 	require("plugins.gruvbox"),
 	require("plugins.telescope"),
 	require("plugins.treesitter"),

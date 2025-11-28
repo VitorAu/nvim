@@ -27,7 +27,6 @@ return {
       preset = {
         pick = nil,
         keys = {
-          { icon = " ", key = "p", desc = "Search Project", action = ":lua require('telescope').extensions.file_browser.file_browser({ path = vim.loop.cwd() })" },
           { icon = " ", key = "f", desc = "Find File", action = ":lua require('snacks.dashboard').pick('files')" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           { icon = " ", key = "c", desc = "Config", action = ":lua require('snacks.dashboard').pick('files', {cwd = vim.fn.stdpath('config')})" },
