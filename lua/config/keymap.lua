@@ -16,22 +16,22 @@ vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', { desc = "Paste from system clipboa
 -----------------------------------------------------------------------
 -- Window Navigation
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Move to left split" })
-vim.keymap.set("n", "<leader>j", "<C-w>j", { desc = "Move to lower split" })
-vim.keymap.set("n", "<leader>k", "<C-w>k", { desc = "Move to upper split" })
-vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Move to right split" })
-vim.keymap.set("n", "<leader><", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<leader>>", ":vertical resize +2<CR>", opts)
-vim.keymap.set("n", "<leader>+", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<leader>-", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower split" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper split" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+vim.keymap.set("n", "<C-<>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<C->>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<C-+>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<C-->", ":resize -2<CR>", opts)
 
 -----------------------------------------------------------------------
 -- Commenting
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<leader>/", function()
+vim.keymap.set("n", "<C-_>", function()
     require("Comment.api").toggle.linewise.current()
 end, opts)
-vim.keymap.set("v", "<leader>/", function()
+vim.keymap.set("v", "<C-_>", function()
     require("Comment.api").toggle.linewise(vim.fn.visualmode())
 end, opts)
 
@@ -57,28 +57,28 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -----------------------------------------------------------------------
 -- Neotree Explorer
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<leader>e", ":Neotree toggle left<CR>", opts)
+vim.keymap.set("n", "<C-b>", ":Neotree toggle left<CR>", opts)
 
 -----------------------------------------------------------------------
 -- Formatting
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<C-i>", function()
     vim.lsp.buf.format({ async = true })
 end, { desc = "Format buffer" })
 
 -----------------------------------------------------------------------
 -- Telescope
 -----------------------------------------------------------------------
-vim.keymap.set("n", "<leader>ff", function()
+vim.keymap.set("n", "ff", function()
     require("telescope.builtin").find_files()
 end, { desc = "Find files in project" })
-vim.keymap.set("n", "<leader>fg", function()
+vim.keymap.set("n", "fg", function()
     require("telescope.builtin").live_grep()
 end, { desc = "Find text in project" })
-vim.keymap.set("n", "<leader>fb", function()
+vim.keymap.set("n", "fb", function()
     require("telescope.builtin").buffers()
 end, { desc = "Find buffers in project" })
-vim.keymap.set("n", "<leader>fp", function()
+vim.keymap.set("n", "fp", function()
     require("telescope.builtin").commands()
 end, { desc = "Command palette" })
 
@@ -89,10 +89,9 @@ local function toggle_term(id)
     local Terminal = require("toggleterm.terminal").Terminal
     Terminal:new({ id = id, direction = "float" }):toggle()
 end
-
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", opts)
-vim.keymap.set("n", "<leader>t1", function() toggle_term(1) end, opts)
-vim.keymap.set("n", "<leader>t2", function() toggle_term(2) end, opts)
-vim.keymap.set("n", "<leader>t3", function() toggle_term(3) end, opts)
-vim.keymap.set("n", "<leader>t4", function() toggle_term(4) end, opts)
+vim.keymap.set("n", "tt", ":ToggleTerm direction=float<CR>", opts)
+vim.keymap.set("n", "th", function() toggle_term(1) end, opts)
+vim.keymap.set("n", "tj", function() toggle_term(2) end, opts)
+vim.keymap.set("n", "tk", function() toggle_term(3) end, opts)
+vim.keymap.set("n", "tl", function() toggle_term(4) end, opts)
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], opts)

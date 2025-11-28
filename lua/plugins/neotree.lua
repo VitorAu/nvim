@@ -17,6 +17,11 @@ return {
 				follow_current_file = true,
 				use_libuv_file_watcher = true,
 			},
+			window = {
+				mappings = {
+					["<C-b>"] = "close_window",
+				},
+			},
 		})
 
 	end,
