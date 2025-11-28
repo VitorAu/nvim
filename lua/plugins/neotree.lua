@@ -18,17 +18,12 @@ return {
 				use_libuv_file_watcher = true,
 			},
 		})
+
 		vim.api.nvim_create_autocmd("VimEnter", {
 			callback = function()
 				vim.cmd("Neotree reveal left")
 			end,
 		})
-		vim.keymap.set("n", "<C-b>", ":Neotree toggle left show <CR>", {
-      desc = "Toggle file explorer",
-    })
-    vim.keymap.set("i", "<C-b>", ":Neotree toggle left show <CR>", {
-      desc = "Toggle file explorer",
-    })
 	end,
 	lazy = false,
 }

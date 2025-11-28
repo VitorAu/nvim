@@ -46,20 +46,12 @@ return {
 			})
 			vim.lsp.config("pyright", {
 				settings = {
-					python = { venvPath = ".", venv = ".venv" },
+					python = {
+						venvPath = ".",
+						venv = ".venv",
+					},
 				},
 			})
-			lsp.on_attach(function(client, bufnr)
-				local opts = { buffer = bufnr, silent = true, noremap = true }
-
-				vim.keymap.set("n", "<C-n>", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "<C-d>", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "<C-a>", vim.lsp.buf.code_action, opts)
-
-				vim.keymap.set("i", "<C-n>", vim.lsp.buf.hover, opts)
-				vim.keymap.set("i", "<C-d>", vim.lsp.buf.definition, opts)
-				vim.keymap.set("i", "<C-a>", vim.lsp.buf.code_action, opts)
-			end)
 			vim.diagnostic.config({
 				virtual_text = false,
 				virtual_lines = true,
