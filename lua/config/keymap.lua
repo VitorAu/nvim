@@ -32,7 +32,10 @@ vim.keymap.set("n", "<C-_>", function()
     require("Comment.api").toggle.linewise.current()
 end, opts)
 vim.keymap.set("v", "<C-_>", function()
-    require("Comment.api").toggle.linewise(vim.fn.visualmode())
+    local api = require("Comment.api")
+    local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+    vim.api.nvim_feedkeys(esc, "nx", false)
+    api.toggle.linewise(vim.fn.visualmode())
 end, opts)
 
 -----------------------------------------------------------------------
@@ -46,11 +49,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, b)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, b)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, b)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, b)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, b)
+        vim.keymap.set("n", "rn", vim.lsp.buf.rename, b)
+        vim.keymap.set("n", "ca", vim.lsp.buf.code_action, b)
         vim.keymap.set("n", "gl", vim.diagnostic.open_float, b)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, b)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, b)
+        vim.keymap.set("n", "e", vim.diagnostic.open_float)
     end,
 })
 
