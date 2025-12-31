@@ -14,6 +14,8 @@ return {
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.formatting.isort,
                 null_ls.builtins.formatting.clang_format,
+                null_ls.builtins.formatting.cmake_format,
+                null_ls.builtins.diagnostics.cmake_lint,
             },
         })
     end,

@@ -7,7 +7,7 @@ return {{
     "williamboman/mason-lspconfig.nvim",
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = {"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls"},
+            ensure_installed = {"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls", "cmake"},
             automatic_installation = true
         })
     end
@@ -18,7 +18,7 @@ return {{
     config = function()
         local lsp = require("lsp-zero").preset({})
 
-        lsp.ensure_installed({"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls"})
+        lsp.ensure_installed({"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls", "cmake"})
         vim.lsp.config("pyright", {
             settings = {
                 python = {
