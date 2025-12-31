@@ -7,18 +7,39 @@ return {{
     "williamboman/mason-lspconfig.nvim",
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = {"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls", "cmake"},
+            ensure_installed = {
+                "lua_ls",
+                "ts_ls",
+                "eslint",
+                "tailwindcss",
+                "clangd",
+                "pyright",
+                "yamlls",
+                "dockerls",
+            },
             automatic_installation = true
         })
     end
 }, {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
-    dependencies = {"neovim/nvim-lspconfig", "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim"},
+    dependencies = {
+        "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim"
+    },
     config = function()
         local lsp = require("lsp-zero").preset({})
-
-        lsp.ensure_installed({"lua_ls", "ts_ls", "eslint", "tailwindcss", "clangd", "pyright", "yamlls", "dockerls", "cmake"})
+        lsp.ensure_installed({
+            "lua_ls",
+            "ts_ls",
+            "eslint",
+            "tailwindcss",
+            "clangd",
+            "pyright",
+            "yamlls",
+            "dockerls",
+        })
         vim.lsp.config("pyright", {
             settings = {
                 python = {
@@ -33,7 +54,6 @@ return {{
             Hint = "󰌵 ",
             Info = " "
         }
-
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, {
@@ -42,7 +62,6 @@ return {{
                 numhl = ""
             })
         end
-
         vim.diagnostic.config({
             virtual_text = false,
             virtual_lines = false,
@@ -55,7 +74,6 @@ return {{
                 wrap = true
             }
         })
-
         lsp.setup()
     end
 }}
