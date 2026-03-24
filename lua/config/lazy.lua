@@ -15,13 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	require("plugins.snack"),
+	require("plugins.lsp"),
+	require("plugins.none"),
 	require("plugins.gruvbox"),
 	require("plugins.telescope"),
-	require("plugins.none"),
 	require("plugins.treesitter"),
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
-	require("plugins.lsp"),
   require("plugins.completion"),
   require("plugins.comment")
 }
