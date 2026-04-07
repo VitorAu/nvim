@@ -11,7 +11,7 @@ vim.g.maplocalleader = " "
 -----------------------------------------------------------------------
 vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("v", "<C-x>", '"+d', { desc = "Cut to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set("n", "<C-v>", '"+p', { desc = "Paste from system clipboard" })
 
 -----------------------------------------------------------------------
 -- Window Navigation
@@ -20,6 +20,10 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower split" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper split" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
+vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
+vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
+vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 vim.keymap.set("n", "<C-<>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C->>", ":vertical resize +2<CR>", opts)
 vim.keymap.set("n", "<C-+>", ":resize +2<CR>", opts)
@@ -74,16 +78,44 @@ end, { desc = "Format buffer" })
 -- Telescope
 -----------------------------------------------------------------------
 vim.keymap.set("n", "ff", function()
-    require("telescope.builtin").find_files()
+    require("telescope.builtin").find_files(
+        require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+        })
+    )
 end, { desc = "Find files in project" })
 vim.keymap.set("n", "fg", function()
-    require("telescope.builtin").live_grep()
+    require("telescope.builtin").live_grep(
+        require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+        })
+    )
 end, { desc = "Find text in project" })
+vim.keymap.set("n", "<C-f>", function()
+    require("telescope.builtin").current_buffer_fuzzy_find(
+        require("telescope.themes").get_dropdown({
+            sorting_strategy = "ascending",
+            previewer = false,
+        })
+    )
+end, { desc = "Fuzzy search in current file" })
 vim.keymap.set("n", "fb", function()
-    require("telescope.builtin").buffers()
+    require("telescope.builtin").buffers(
+        require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+        })
+    )
 end, { desc = "Find buffers in project" })
 vim.keymap.set("n", "fp", function()
-    require("telescope.builtin").commands()
+    require("telescope.builtin").commands(
+        require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+        })
+    )
 end, { desc = "Command palette" })
 
 -----------------------------------------------------------------------
@@ -99,3 +131,16 @@ vim.keymap.set("n", "tj", function() toggle_term(2) end, opts)
 vim.keymap.set("n", "tk", function() toggle_term(3) end, opts)
 vim.keymap.set("n", "tl", function() toggle_term(4) end, opts)
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], opts)
+
+-----------------------------------------------------------------------
+-- Search / UI Behavior
+-----------------------------------------------------------------------
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = "Clear search highlight" })
+
+-----------------------------------------------------------------------
+-- Discipline
+-----------------------------------------------------------------------
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')

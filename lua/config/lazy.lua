@@ -14,19 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = "",
-            [vim.diagnostic.severity.WARN]  = "",
-            [vim.diagnostic.severity.INFO]  = "",
-            [vim.diagnostic.severity.HINT]  = "󰌵",
-        },
-    },
-})
-
 local plugins = {
-    require("plugins.snack"),
     require("plugins.lsp"),
     require("plugins.none"),
     require("plugins.gruvbox"),
