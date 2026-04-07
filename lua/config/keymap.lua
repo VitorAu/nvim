@@ -94,7 +94,7 @@ vim.keymap.set("n", "fg", function()
     )
 end, { desc = "Find text in project" })
 vim.keymap.set("n", "<C-f>", function()
-    require("telescope.builtin").current_buffer_fuzzy_find(
+    require("telescope.builtin").current_buffer_fuzzy_fin(
         require("telescope.themes").get_dropdown({
             sorting_strategy = "ascending",
             previewer = false,
