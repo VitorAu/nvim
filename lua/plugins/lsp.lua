@@ -102,10 +102,7 @@ return {
                 virtual_lines = false,
                 underline = true,
                 severity_sort = true,
-                float = {
-                    border = "rounded",
-                    source = "always",
-                },
+                float = false,
                 signs = {
                     text = {
                         [vim.diagnostic.severity.ERROR] = " ",
