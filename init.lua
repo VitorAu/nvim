@@ -30,7 +30,7 @@ opt.signcolumn = "yes" -- Always show a sign column
 opt.showmatch = true -- Highlight matching brackets
 opt.termguicolors = true -- Enable true colors
 opt.mouse = "a" -- Enable mouse support
-opt.spell = true -- Enables spell checking
+-- opt.spell = true -- Enables spell checking
 -- opt.clipboard:append("unnamedplus") -- Use system clipboard
 opt.autoread = true -- Auto reload changes if outside of neovim
 opt.autowrite = false -- Disables auto save

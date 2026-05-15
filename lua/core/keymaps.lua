@@ -98,9 +98,9 @@ vim.keymap.set("v", "<C-/>", function()
 end, opts, { desc = "Comment lines" })
 
 ----------------------------------------------------------------------
---- Neotree
+--- Nvim-tree
 ----------------------------------------------------------------------
-keymap({ "n", "x" }, "<C-b>", "<cmd>:Neotree toggle left<CR>", opts, { desc = "Toggle neotree" })
+keymap({ "n", "x" }, "<C-b>", "<cmd>:NvimTreeToggle<CR>", opts, { desc = "Toggle neotree" })
 
 
 ----------------------------------------------------------------------
