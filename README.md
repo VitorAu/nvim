@@ -2,8 +2,6 @@
 
 A Neovim 0.12 setup
 
----
-
 ## 🧩 Plugins
 
 ### Core dependencies
