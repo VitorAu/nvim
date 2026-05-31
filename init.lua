@@ -26,6 +26,7 @@ opt.hlsearch = true -- highlight search matches
 opt.incsearch = true -- Show matches as you type
 
 opt.undofile = true -- Enable undo persistance
+opt.autoread = true -- Enable autoreload when content changed outside of neovim
 opt.signcolumn = "yes" -- Always show a sign column
 opt.showmatch = true -- Highlight matching brackets
 opt.termguicolors = true -- Enable true colors

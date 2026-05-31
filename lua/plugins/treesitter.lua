@@ -8,7 +8,8 @@ treesitter.setup({
     "python",
     "c",
     "cpp",
-    "arduino"
+    "arduino",
+    "objc"
   },
   highlight = { enable = true }
 })
