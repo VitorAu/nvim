@@ -1,7 +1,6 @@
 local treesitter = require("nvim-treesitter")
 
-treesitter.setup({
-  ensure_installed = {
+treesitter.install({
     "lua",
     "javascript",
     "typescript",
@@ -10,8 +9,6 @@ treesitter.setup({
     "cpp",
     "arduino",
     "objc"
-  },
-  highlight = { enable = true }
 })
 
 return treesitter
