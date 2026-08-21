@@ -41,9 +41,14 @@ keymap("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" 
 keymap("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 keymap("n", "<leader>gr", vim.lsp.buf.implementation, { desc = "Show refrences" })
 keymap("n", "<leader>gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-keymap("n", "<leader>K", vim.lsp.buf.hover, { desc = "Hover documentation" })
+keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 keymap("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+
+----------------------------------------------------------------------
+--- Diagnostics
+----------------------------------------------------------------------
+keymap("n", "E", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 
 ----------------------------------------------------------------------
 --- Telescope
