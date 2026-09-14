@@ -117,8 +117,8 @@ keymap({ "n", "x" }, "<leader>p", '"+p', { desc = "Pase text from system clipboa
 ----------------------------------------------------------------------
 --- Terminal
 ----------------------------------------------------------------------
-keymap("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal mode" })
-keymap("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle terminal" }, opts)
+-- keymap("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal mode" })
+-- keymap("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle terminal" }, opts)
 
 ----------------------------------------------------------------------
 --- Search
