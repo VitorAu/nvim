@@ -7,7 +7,9 @@ vim.pack.add({
   { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },    -- enabled
   { src = "https://github.com/nvim-telescope/telescope-file-browser.nvim" }, -- enabled
   { src = "https://github.com/neovim/nvim-lspconfig" },                      -- enabled
-  { src = "https://github.com/saghen/blink.lib.git" }                        -- enabled
+  { src = "https://github.com/saghen/blink.lib.git" },                       -- enabled
+  { src = "https://github.com/mfussenegger/nvim-dap.git" },                  -- enabled
+  { src = "https://github.com/nvim-neotest/nvim-nio.git"}                    -- enabled
 })
 
 ----------------------------------------------------------------------
@@ -30,8 +32,9 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp.git" },                       -- enabled
   { src = "https://github.com/numToStr/Comment.nvim.git" },                  -- enabled
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim.git" }, -- enabled
-  { src = "https://github.com/akinsho/toggleterm.nvim.git" },                -- disabled
+  -- { src = "https://github.com/akinsho/toggleterm.nvim.git" },             -- disabled
   { src = "https://github.com/nvim-tree/nvim-tree.lua.git" },                -- enabled
+  { src = "https://github.com/rcarriga/nvim-dap-ui.git"}                     -- enabled
 })
 
 require("plugins.nightfox")
@@ -47,3 +50,4 @@ require("plugins.comment")
 require("plugins.inline")
 -- require("plugins.toggleterm")
 require("plugins.tree")
+require("plugins.dap")

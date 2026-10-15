@@ -33,6 +33,20 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
 keymap("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center the cursor" })
 keymap("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center the cursor" })
 
+
+----------------------------------------------------------------------
+--- DAP
+----------------------------------------------------------------------
+keymap("n", "<leader>dc", require("dap").continue, { desc = "Debug continue"})
+keymap("n", "<leader>dp", require("dap").pause, { desc = "Debug pause"})
+keymap("n", "<leader>dq", require("dap").terminate, { desc = "Debug terminate"})
+keymap("n", "<leader>dh", require("dapui").toggle, { desc = "Debug toggle UI"})
+keymap("n", "<leader>dt", require("dap").toggle_breakpoint, { desc = "Debug toggle breakpoint"})
+keymap("n", "<leader>dsi", require("dap").step_into, { desc = "Debug step into"})
+keymap("n", "<leader>dso", require("dap").step_out, { desc = "Debug step out"})
+keymap("n", "<leader>dr", require("dap").repl.open, { desc = "Debug open repl"})
+keymap("n", "<leader>dl", require("dap").run_last, { desc = "Debug run last session"})
+
 ----------------------------------------------------------------------
 --- LSP
 ----------------------------------------------------------------------
